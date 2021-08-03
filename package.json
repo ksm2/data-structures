@@ -1,0 +1,12 @@
+{
+  "name": "@ksm2/data-structures",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
