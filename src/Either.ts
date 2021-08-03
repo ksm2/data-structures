@@ -37,6 +37,18 @@ export class Either<L, R> {
   }
 
   /**
+   * If a value is left, performs the given left action with the value,
+   * otherwise performs the given right action.
+   */
+  ifLeftOrRight(leftAction: (value: L) => void, rightAction: (value: R) => void): void {
+    if (this.value[0] === "left") {
+      leftAction(this.value[1]);
+    } else {
+      rightAction(this.value[1]);
+    }
+  }
+
+  /**
    * Indicates whether some other object is "equal to" this `Either`.
    */
   equals(other: unknown): other is Either<L, R> {
