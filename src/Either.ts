@@ -23,6 +23,17 @@ export class Either<L, R> {
   }
 
   /**
+   * If a value is left, returns the value, otherwise throws the right value.
+   */
+  get(): L {
+    if (this.value[0] === "left") {
+      return this.value[1];
+    }
+
+    throw this.value[1];
+  }
+
+  /**
    * If a value is left, returns `true`, otherwise `false`.
    */
   isLeft(): boolean {

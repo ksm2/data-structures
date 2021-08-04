@@ -12,6 +12,11 @@ describe("Either", () => {
     right = Either.right(rightValue);
   });
 
+  test("get", () => {
+    expect(left.get()).toBe(leftValue);
+    expect(() => right.get()).toThrow(rightValue);
+  });
+
   test("isLeft", () => {
     expect(left.isLeft()).toBe(true);
     expect(right.isLeft()).toBe(false);
