@@ -21,5 +21,8 @@
   "prettier": {
     "printWidth": 120,
     "trailingComma": "all"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["./jest.js"]
   }
 }
