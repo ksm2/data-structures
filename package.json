@@ -20,7 +20,8 @@
   },
   "prettier": {
     "printWidth": 120,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "endOfLine": "auto"
   },
   "jest": {
     "setupFilesAfterEnv": ["./testers/jest.js"],
