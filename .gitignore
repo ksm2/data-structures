@@ -1,5 +1,7 @@
+.idea/
 .yarn/*
 !.yarn/releases
+node_modules/
 .pnp.cjs
 coverage/
 lib/
