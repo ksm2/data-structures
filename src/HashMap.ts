@@ -1,4 +1,4 @@
-import { Optional } from "./Optional";
+import { Optional } from "./Optional.js";
 
 export class HashMap<K, V> {
   static readonly #EMPTY = new HashMap<never, never>();

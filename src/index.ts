@@ -1,4 +1,4 @@
-export { Comparator } from "./Comparator";
-export { Either } from "./Either";
-export { HashMap } from "./HashMap";
-export { Optional } from "./Optional";
+export { Comparator } from "./Comparator.js";
+export { Either } from "./Either.js";
+export { HashMap } from "./HashMap.js";
+export { Optional } from "./Optional.js";

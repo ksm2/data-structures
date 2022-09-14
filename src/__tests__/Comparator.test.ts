@@ -1,4 +1,4 @@
-import { Comparable, Comparator } from "../Comparator";
+import { Comparable, Comparator } from "../Comparator.js";
 
 describe("Comparator", () => {
   class MyComparable implements Comparable {

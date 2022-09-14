@@ -1,4 +1,4 @@
-import { HashMap } from "../HashMap";
+import { HashMap } from "../HashMap.js";
 
 describe("HashMap", () => {
   test("empty", () => {

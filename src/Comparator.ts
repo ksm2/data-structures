@@ -5,10 +5,10 @@ export interface Comparable {
 type ComparableValue = string | number | boolean | Date | Comparable;
 
 export class Comparator<T> {
-  private readonly comparer: (one: T, two: T) => number;
+  readonly #comparer: (one: T, two: T) => number;
 
   private constructor(comparer: (one: T, two: T) => number) {
-    this.comparer = comparer;
+    this.#comparer = comparer;
   }
 
   static naturalOrder<T extends ComparableValue>(): Comparator<T> {
@@ -40,7 +40,7 @@ export class Comparator<T> {
   }
 
   compare(one: T, two: T): number {
-    return this.comparer(one, two);
+    return this.#comparer(one, two);
   }
 
   reversed(): Comparator<T> {
@@ -50,7 +50,7 @@ export class Comparator<T> {
   }
 
   thenComparing<U extends ComparableValue>(other: Comparator<T> | ((value: T) => U)): Comparator<T> {
-    const comparer = this.comparer;
+    const comparer = this.#comparer;
     return new Comparator<T>((one, two) => {
       const value = comparer(one, two);
 

@@ -1,4 +1,5 @@
-import { Either } from "../Either";
+import { jest } from "@jest/globals";
+import { Either } from "../Either.js";
 
 describe("Either", () => {
   let left: Either<number, string>;

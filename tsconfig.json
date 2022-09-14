@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "Node16",
     "declaration": true,
     "declarationMap": true,
     "outDir": "./lib",
@@ -19,7 +19,7 @@
     "noPropertyAccessFromIndexSignature": true,
 
     /* Module Resolution Options */
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true

@@ -1,4 +1,5 @@
-import { Optional } from "../Optional";
+import { jest } from "@jest/globals";
+import { Optional } from "../Optional.js";
 
 describe("Optional", () => {
   const presentValue = 42;

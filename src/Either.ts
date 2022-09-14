@@ -2,10 +2,10 @@
  * A container object which contains a value that is either left or right.
  */
 export class Either<L, R> {
-  private readonly value: ["left", L] | ["right", R];
+  readonly #value: ["left", L] | ["right", R];
 
   private constructor(...value: ["left", L] | ["right", R]) {
-    this.value = value;
+    this.#value = value;
   }
 
   /**
@@ -26,25 +26,25 @@ export class Either<L, R> {
    * If a value is left, returns the value, otherwise throws the right value.
    */
   get(): L {
-    if (this.value[0] === "left") {
-      return this.value[1];
+    if (this.#value[0] === "left") {
+      return this.#value[1];
     }
 
-    throw this.value[1];
+    throw this.#value[1];
   }
 
   /**
    * If a value is left, returns `true`, otherwise `false`.
    */
   isLeft(): boolean {
-    return this.value[0] === "left";
+    return this.#value[0] === "left";
   }
 
   /**
    * If a value is right, returns `true`, otherwise `false`.
    */
   isRight(): boolean {
-    return this.value[0] === "right";
+    return this.#value[0] === "right";
   }
 
   /**
@@ -52,10 +52,10 @@ export class Either<L, R> {
    * otherwise performs the given right action.
    */
   ifLeftOrRight(leftAction: (value: L) => void, rightAction: (value: R) => void): void {
-    if (this.value[0] === "left") {
-      leftAction(this.value[1]);
+    if (this.#value[0] === "left") {
+      leftAction(this.#value[1]);
     } else {
-      rightAction(this.value[1]);
+      rightAction(this.#value[1]);
     }
   }
 
@@ -68,7 +68,7 @@ export class Either<L, R> {
     }
 
     if (other instanceof Either) {
-      return this.value[0] === other.value[0] && this.value[1] === other.value[1];
+      return this.#value[0] === other.#value[0] && this.#value[1] === other.#value[1];
     }
 
     return false;
